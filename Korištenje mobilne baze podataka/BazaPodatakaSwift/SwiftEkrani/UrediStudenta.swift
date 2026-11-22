@@ -12,6 +12,9 @@ struct UrediStudenta: View {
                 TextField("Ime: ", text: $ime)
                 RezultatiPretrage(ime: ime)
             }
+            NavigationLink("Dodaj studenta Swift") {
+                DodajStudenta()
+            }.buttonStyle(.bordered)
             .navigationTitle("Pretraživanje studenata")
         }
     }
@@ -19,6 +22,7 @@ struct UrediStudenta: View {
 
 struct RezultatiPretrage: View {
     @Query private var studenti: [Student]
+    @Query private var kolokviji: [Kolokvij]
     @Environment(\.modelContext) private var modelContext
     
     init(ime: String) {
@@ -30,17 +34,36 @@ struct RezultatiPretrage: View {
             Text("Id: \(student.studentId)")
             Text("Ime: \(student.ime)")
             Text("Prezime: \(student.prezime)")
+            Text("Email: \(student.email)")
+            ForEach(student.kolokviji, id: \.kolokvijId) { kolokvij in
+                    Text("\(kolokvij.kolegij?.naziv ?? "Nepoznat kolegij") (\(kolokvij.redniBroj). kolokvij): Ocjena \(kolokvij.ocjena)")
+                    .font(.subheadline)
+            }
+            NavigationLink("Uredi") {
+                DetaljiStudenta(student: student)
+            }.buttonStyle(.bordered)
             Button("Obrisi", role: .destructive){
                 modelContext.delete(student)
             }
         }
-        
+        .navigationTitle("Pregled studenta")
     }
 }
 
-#Preview {
-    DodajStudenta()
-        .modelContainer(for: Student.self, inMemory: true)
+struct DetaljiStudenta: View {
+    @Bindable var student: Student
+    @Environment(\.dismiss) private var dismiss
+    
+    var body: some View{
+        Form{
+            TextField("Ime studenta: ", text: $student.ime)
+            TextField("Prezime studenta: ", text: $student.prezime)
+            TextField("Prezime studenta: ", text: $student.email)
+            Button("Spremi"){
+                dismiss()
+            }
+        }
+    }
 }
 
 
