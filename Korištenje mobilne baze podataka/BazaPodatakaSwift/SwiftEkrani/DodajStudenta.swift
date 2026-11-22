@@ -24,6 +24,9 @@ struct DodajStudenta: View {
                 NavigationLink("Dodaj kolegij") {
                     DodajKolegij()
                 }.buttonStyle(.bordered)
+                NavigationLink("Izolirana pohrana") {
+                    IzoliranaPohrana()
+                }.buttonStyle(.bordered)
                 ForEach(studenti){ student in
                     Text("Id: \(student.studentId)")
                     Text("Ime: \(student.ime)")
@@ -36,7 +39,5 @@ struct DodajStudenta: View {
     }
 }
 
-#Preview {
-    DodajStudenta()
-        .modelContainer(for: Student.self, inMemory: true)
-}
+
+
