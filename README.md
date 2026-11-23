@@ -1,6 +1,6 @@
-# BazaPodataka-RAMPU 
+# BazaPodataka-RAMPU 📱
 
-Praktični iOS projekt izrađen u programskom jeziku Swift za kolegij Razvoj aplikacija za mobilne i pametne uređaje
+Praktični iOS projekt izrađen u programskom jeziku **Swift** za kolegij *Razvoj aplikacija za mobilne i pametne uređaje*.
 
 Projekt demonstrira teorijske i praktične koncepte lokalne pohrane podataka na iOS platformi koristeći preporučene Appleove tehnologije i najbolje prakse.
 
@@ -8,10 +8,10 @@ Projekt demonstrira teorijske i praktične koncepte lokalne pohrane podataka na 
 
 ## Korištene tehnologije i mehanizmi pohrane
 
-* SwiftData - Appleov moderni ORM (Object-Relational Mapping) okvir za rad s lokalnom bazom podataka
-* Verzioniranje i migracije sheme - upravljanje verzijama modela podataka i lagana migracija 
-* Izolirana pohrana (App Sandbox & FileManager) - spremanje izolirane baze podataka u `Application Support` direktorij (`IzoliranaBaza_V2.store`) te izvoz i čitanje tekstualnih izvještaja (`studenti_izolirano.txt`) unutar `Documents` direktorija
-* @AppStorage (UserDefaults) – pohrana jednostavnih korisničkih postavki i stanja sučelja
+- **SwiftData** – Appleov moderni ORM (*Object-Relational Mapping*) okvir za rad s lokalnom bazom podataka
+- **Verzioniranje i migracije sheme** – upravljanje verzijama modela podataka i lagana migracija
+- **Izolirana pohrana (App Sandbox & FileManager)** – spremanje izolirane baze podataka u `Application Support` direktorij (`IzoliranaBaza_V2.store`) te izvoz i čitanje tekstualnih izvještaja (`studenti_izolirano.txt`) unutar `Documents` direktorija
+- **@AppStorage (UserDefaults)** – pohrana jednostavnih korisničkih postavki i stanja sučelja
 
 ---
 
@@ -19,14 +19,15 @@ Projekt demonstrira teorijske i praktične koncepte lokalne pohrane podataka na 
 
 Baza podataka modelirana je kroz tri povezana entiteta uz primjenu normalizacije i slabog entiteta s kaskadnim brisanjem (`deleteRule: .cascade`):
 
-* `Student` – osnovni entitet s jedinstvenim identifikatorom (`studentId`), imenom, prezimenom i e-mail adresom.
-* `Kolegij` – osnovni entitet s jedinstvenim identifikatorom (`kolegijId`), nazivom i godinom studija.
-* `Kolokvij` (slabi entitet) – povezuje studenta i kolegij (`1:N` veze putem `@Relationship`) te bilježi redni broj kolokvija i ostvarenu ocjenu.
+- `Student` – osnovni entitet s jedinstvenim identifikatorom (`studentId`), imenom, prezimenom i e-mail adresom.
+- `Kolegij` – osnovni entitet s jedinstvenim identifikatorom (`kolegijId`), nazivom i godinom studija.
+- `Kolokvij` (slabi entitet) – povezuje studenta i kolegij (`1:N` veze putem `@Relationship`) te bilježi redni broj kolokvija i ostvarenu ocjenu.
 
 ---
 
 ## Struktura projekta
 
+```text
 BazaPodatakaSwift/
 ├── Preview Content/
 ├── SwiftBazaPodataka/
@@ -43,7 +44,7 @@ BazaPodatakaSwift/
 │   └── UrediStudenta.swift
 ├── Assets.xcassets
 └── BazaPodatakaSwiftApp.swift
-
+```
 
 ## Objašnjenje koda
 
