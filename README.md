@@ -45,42 +45,42 @@ BazaPodatakaSwift/
 ├── Assets.xcassets
 └── BazaPodatakaSwiftApp.swift
 ```
-
+---
 ## Objašnjenje koda
 
-#BazaPodatakaSwiftApp
+## BazaPodatakaSwiftApp
 
 Odabire scheme koja se koristi za SwiftData bazu na početku te ukoliko ne postoji direktorij napravi direktorij za izoliranu pohranu. Nakon toga otvara Dodaj Studenta.
 
-##DodajStudenta
+## DodajStudenta
 
 Ponudi 3 text fielda za unos informacija novog entiteta student. Prikazuje nekoliko gumba koji dozvoljavaju navigaciju na druge ekrane i prikazuje sve studente u bazi kroz for petlju
 
-##DodajKolegij
+## DodajKolegij
 
 Ponudi 2 text fielda za unos informacija nvoog entiteta kolegij. Sa for petljom prikazuje sve postojeće kolegije
 
-##DodajKolokvij
+## DodajKolokvij
 
 Ponudi 2 text fielda i 2 drop down polja u kojima se nude opcije dodati postojeće studente i kolegije kao vanjske ključeve na kolokvij. Nakon toga for petlja prikazuje sve kolokvije i pretraživanjem preko veze nalazi imena studenta i kolegija na koji su vezanu
 
-##UrediStudenta
+## UrediStudenta
 
 Sa query se filtriraju studenti prema unesenom imenu filtriraju. Nakon toga je gumb koji vodi do uređivanja entiteta ili brisanje. Kog uređivanja se nude text fieldovi koji odma mijenjaju sve informacije o studentu
 
-##IzoliranaPohrana
+## IzoliranaPohrana
 
 Dvije funkcije koje spremaju informacije u datoteku i čitaju iz nje te jednostavan primjer app storage koji sprema vrijednosti dvije varijable
 
-##Kolegij i Student
+## Kolegij i Student
 
 Dvije jednostave SwiftData tablice koje imaju relationship sa kolokvijem (slabim entitetom) preko kojeg ukoliko su obrisanu brišu vezani kolokvij. 
 
-#Kolokvij
+## Kolokvij
 
 SwiftData tablica koja se nadovezuje na studenta i kolegij sa referencama na njih
 
-##BazaSchema
+## BazaSchema
 
 Opisuje sve scheme na projektu i određuje koja se schema trenutno koristi
 
